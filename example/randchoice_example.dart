@@ -6,6 +6,7 @@ import 'package:randchoice/randchoice.dart';
 main() {
   print('\nExample 1 - Pick 1 from a list.');
   print(RandomChoice.choices(['a', 'b', 'c'])[0]);
+  print(RandomChoice.choices([1, 2, 3])[0]);
 
   print('\nExample 2 - Pick 2 from a list.');
   var results = RandomChoice.choices(['red', 'green', 'blue', 'alpha'], 2);

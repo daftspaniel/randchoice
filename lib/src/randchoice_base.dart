@@ -6,6 +6,7 @@ import 'dart:math';
 /// Returns a random choice from a [List] of items
 class RandomChoice {
   static final Random rng = new Random();
+
   static List<T> choices<T>(List<T> population, [count = 1, weights = null]) {
     final List<T> results = [];
 
