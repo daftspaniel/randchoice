@@ -5,9 +5,9 @@ import 'dart:math';
 
 /// Returns a random choice from a [List] of items
 class RandomChoice {
-  static List<T> choices<T>(List<T> population,
-      [count = 1, weights = null]) {
-    List<T> results = [];
+  static final Random rng = new Random();
+  static List<T> choices<T>(List<T> population, [count = 1, weights = null]) {
+    final List<T> results = [];
 
     if (population != null && population.length > 0) {
       if (weights != null) {
@@ -20,8 +20,9 @@ class RandomChoice {
   }
 
   static List<T> buildWeightedPopulation<T>(List<T> population, weights) {
-    List<T> weightedPopulation = [];
-    for (int i; i < population.length; i++) {
+    final List<T> weightedPopulation = [];
+
+    for (int i = 0; i < population.length; i++) {
       List<T> values = new List.filled(weights[i], population[i]);
       weightedPopulation.addAll(values);
     }
@@ -30,7 +31,6 @@ class RandomChoice {
   }
 
   static void addRandomItemFromList(List population, List results) {
-    Random rng = new Random();
     int index = rng.nextInt(population.length);
     results.add(population.elementAt(index));
   }

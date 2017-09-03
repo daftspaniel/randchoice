@@ -28,5 +28,14 @@ void main() {
       expect(results[1], anyOf(1, 2, 3));
       expect(results.length, 3);
     });
+
+    test('List should return the 10 items from selection', () {
+      List<String> results =
+          RandomChoice.choices(['elephant', 'frog'], 10, [4, 1]);
+      expect(results.length, 10);
+      results.forEach((String entry) {
+        expect(entry, anyOf(['elephant', 'frog']));
+      });
+    });
   });
 }
