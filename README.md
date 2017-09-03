@@ -1,12 +1,12 @@
 # randchoice - Pick random choices from lists.
 
-A small library for picking items and list of items from lists.
+A micro library for picking random item(s) from lists.
 
 The population of lists can be weighted if required.
 
 Inspired by Python's random.choices.
 
-## Usage
+## Usage Lists
 
 A simple usage example:
 
