@@ -3,7 +3,7 @@
 
 import 'dart:math';
 
-/// Utitlity class for making random selections from [List]s.
+/// Utility class for making random selections from [List]s.
 class RandomChoice {
   static final Random rng = new Random();
 
@@ -16,12 +16,14 @@ class RandomChoice {
         population = buildWeightedPopulation(population, weights);
       }
 
-      while (results.length < count) addRandomItemFromList(population, results);
+      while (results.length < count) addRandomItem(population, results);
     }
     return results;
   }
 
-  static List<T> buildWeightedPopulation<T>(List<T> population, weights) {
+  /// Returns a [List] of items each weighted by particular value
+  static List<T> buildWeightedPopulation<T>(
+      List<T> population, List<int> weights) {
     final List<T> weightedPopulation = [];
 
     for (int i = 0; i < population.length; i++) {
@@ -32,7 +34,8 @@ class RandomChoice {
     return population;
   }
 
-  static void addRandomItemFromList(List population, List results) {
+  /// Adds a random item from one list to another [List]
+  static void addRandomItem(List population, List results) {
     int index = rng.nextInt(population.length);
     results.add(population.elementAt(index));
   }
