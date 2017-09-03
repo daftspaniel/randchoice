@@ -37,5 +37,14 @@ void main() {
         expect(entry, anyOf(['elephant', 'frog']));
       });
     });
+
+    test('List should return the 100 items but never frog', () {
+      List<String> results =
+          RandomChoice.choices(['elephant', 'bear', 'frog'], 100, [1, 1, 0]);
+      expect(results.length, 100);
+      results.forEach((String entry) {
+        expect(entry, anyOf(['elephant', 'bear']));
+      });
+    });
   });
 }
