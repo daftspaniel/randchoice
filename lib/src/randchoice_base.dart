@@ -3,10 +3,11 @@
 
 import 'dart:math';
 
-/// Returns a random choice from a [List] of items
+/// Utitlity class for making random selections from [List]s.
 class RandomChoice {
   static final Random rng = new Random();
 
+  /// Returns a specified number of random choice(s) of from a [List] of items
   static List<T> choices<T>(List<T> population, [count = 1, weights = null]) {
     final List<T> results = [];
 
